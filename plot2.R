@@ -13,7 +13,7 @@ z <- NULL
 
 reduced$Datetime <- as.POSIXct(paste(reduced$Date, reduced$Time), format="%d/%m/%Y %H:%M:%S")
 
-png (filename = 'plot1.png', width =480, height = 480)
+png (filename = 'plot2.png', width =480, height = 480)
 hist(reduced$Global_active_power, xlab = 'Global Active Power (kilowatts)', main='Global active Power', col="red", pin = c(480,480))
 dev.off()
 
