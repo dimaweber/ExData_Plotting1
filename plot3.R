@@ -13,8 +13,11 @@ z <- NULL
 
 reduced$Datetime <- as.POSIXct(paste(reduced$Date, reduced$Time), format="%d/%m/%Y %H:%M:%S")
 
-png (filename = 'plot2.png', width =480, height = 480)
+png (filename = 'plot3.png', width =480, height = 480)
 plot (reduced$Datetime, reduced$Global_active_power, type="n", main="", xlab="", ylab="Global Active Power (kilowatts)")
-lines (reduced$Datetime, reduced$Global_active_power)
+legend("topright", c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), col=c("black","red","blue"), lty=c(1,1,1))
+lines (reduced$Sub_metering_1, reduced$Global_active_power, col="black")
+lines (reduced$Sub_metering_2, reduced$Global_active_power, col="red")
+lines (reduced$Sub_metering_3, reduced$Global_active_power, col="blue")
 dev.off()
 
